@@ -2,7 +2,7 @@ package com.cmcmahon615.lotomoney;
 
 import java.io.IOException;
 
-public class Main {
+public class Application {
     public static void main(String[] args) throws IOException {
         System.out.println("Welcome to Lot O'Money!!!");
         Options settings = Options.setUpGame();

@@ -1,7 +1,10 @@
 package com.cmcmahon615.lotomoney;
 
+import lombok.Data;
+
 import java.text.DecimalFormat;
 
+@Data
 public class Stats {
     protected int ticketsPurchased = 0;
     protected int drawingsHeld = 0;

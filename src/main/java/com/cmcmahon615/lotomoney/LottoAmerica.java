@@ -1,10 +1,15 @@
 package com.cmcmahon615.lotomoney;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class LottoAmerica extends Lottery {
 
     public LottoAmerica(String quickPick) {
@@ -183,7 +188,7 @@ public class LottoAmerica extends Lottery {
                         While playing Lotto America, you have matched:
                         
                         Numbers Matched         Payout          Frequency
-                        5 of 5 + Star Ball:     Jackpot         %s time(s) 
+                        5 of 5 + Star Ball:     Jackpot         %s time(s)
                         5 of 5:                 $20,000         %s times
                         4 of 5 + Star Ball:     $1,000          %s times
                         4 of 5:                 $100            %s times

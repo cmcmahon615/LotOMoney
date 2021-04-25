@@ -1,10 +1,15 @@
 package com.cmcmahon615.lotomoney;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class Cash4Life extends Lottery {
 
     public Cash4Life(String quickPick) {

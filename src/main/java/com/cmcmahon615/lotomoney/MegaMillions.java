@@ -1,10 +1,15 @@
 package com.cmcmahon615.lotomoney;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class MegaMillions extends Lottery {
 
     public MegaMillions(String quickPick) {
@@ -179,7 +184,7 @@ public class MegaMillions extends Lottery {
         DecimalFormat pf = new DecimalFormat(("##.##%"));
         float winPercentage = ((float) stats.prizeWinners / (float) stats.ticketsPurchased);
         System.out.printf("""
-                        While playing Mega Millions, you have matched: 
+                        While playing Mega Millions, you have matched:
                         
                         Numbers Matched         Payout          Frequency
                         5 of 5 + Mega Ball:     Jackpot         %s time(s)

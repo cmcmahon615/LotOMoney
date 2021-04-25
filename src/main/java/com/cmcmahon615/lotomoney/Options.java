@@ -1,11 +1,13 @@
 package com.cmcmahon615.lotomoney;
 
+import lombok.Data;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
-
+@Data
 public class Options {
 
     protected String game; // Which lottery is being played
