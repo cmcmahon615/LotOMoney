@@ -11,6 +11,7 @@ import java.util.Random;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Powerball extends Lottery {
+    private int [] powerPlayNumbers = {2, 3, 4, 5, 10};
 
     public Powerball(String quickPick) {
         super(2,2);
@@ -20,47 +21,6 @@ public class Powerball extends Lottery {
         }
     }
 
-    /* Additional constructors, getters, and setters for future feature to simulate lottery strategies
-    public Powerball() {
-        super(2, 2);
-    }
-
-    public Powerball(HashSet<Integer> baseNumbers) {
-        super(2,2);
-        this.baseNumbers = baseNumbers;
-        this.plusNumber = plusPicker();
-    }
-
-    public Powerball(Integer plusNumber) {
-        super(2,2);
-        this.plusNumber = plusNumber;
-        this.baseNumbers = basePicker();
-    }
-
-    public Powerball(HashSet<Integer> baseNumbers, Integer plusNumber) {
-        super(2,2);
-        this.baseNumbers = baseNumbers;
-        this.plusNumber = plusNumber;
-    }
-
-    // Getters & Setters
-    public HashSet<Integer> getbaseNumbers() {
-        return baseNumbers;
-    }
-
-    public Integer getplusNumber() {
-        return plusNumber;
-    }
-
-    public void setbaseNumbers(HashSet<Integer> baseNumbers) {
-        this.baseNumbers = baseNumbers;
-    }
-
-    public void setplusNumber(Integer plusNumber) {
-        this.plusNumber = plusNumber;
-    }*/
-
-    // Methods
     @Override
     public HashSet<Integer> basePicker() {
         HashSet<Integer> result = new HashSet<>();
@@ -76,12 +36,13 @@ public class Powerball extends Lottery {
         return rand.nextInt(26) + 1;
     }
 
-    public static void simulateLottery(Options options, Stats stats) {
+    public void simulateLottery(Options options, Stats stats) {
         Lottery winningTicket = new Powerball("QP");
         stats.drawingsHeld++;
         if (stats.drawingsHeld % 104 == 0)
             stats.yearsPassed++;
 
+        drawMultiplier(options, powerPlayNumbers);
         // Determine Power Play number
         Random rand = new Random();
         int multiplier = 1;

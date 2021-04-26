@@ -15,7 +15,9 @@ public class Application {
             case "LA" -> LottoAmerica.showPrizes(report);
             case "C4L" -> Cash4Life.showPrizes(report);
         }
+        System.out.println();
         report.reportMoneySpent(settings);
+        System.out.println();
         report.reportTimePlayed(settings);
     }
 
@@ -42,7 +44,7 @@ public class Application {
 
     public static void startSimulation(Options options, Stats stats) {
         switch (options.game) {
-            case "PB" -> Powerball.simulateLottery(options, stats);
+            case "PB" -> System.out.println("Powerball is down for refactoring");
             case "MM" -> MegaMillions.simulateLottery(options, stats);
             case "LA" -> LottoAmerica.simulateLottery(options, stats);
             case "C4L" -> Cash4Life.simulateLottery(options, stats);
